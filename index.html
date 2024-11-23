@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcolatrice</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Calcolatrice</h1>
+    <div id="numeri">
+        <div id="input"></div>
+        <div id="risposta"></div>
+    </div>
+    <!--SPAZIO PER PER PULSANTI-->
+    <div id="pulsanti">
+        <table>
+            <tr>
+                <td><button onclick="n()" value="1">7</button></td>
+                <td><button onclick="n()" value="1">8</button></td>
+                <td><button onclick="n()" value="1">9</button></td>
+                <td><button onclick="somma()">+</button></td>
+                <td><button onclick="divisione()">&divide</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="n()">4</button></td>
+                <td><button onclick="n()">5</button></td>
+                <td><button onclick="n()">6</button></td>
+                <td><button onclick="sottrazione()">-</button></td>
+                <td><button onclick="potenza()">^</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="n()">1</button></td>
+                <td><button onclick="n()">2</button></td>
+                <td><button onclick="n()">3</button></td>
+                <td><button onclick="moltiplicazione()">&times</button></td>
+                <td><button onclick="radice()">&#x221A</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="n()">0</button></td>
+                <td><button onclick="cancella()">&#x2297</button></td>
+            </tr>
+    </table>
+        <!--bisogna mettere uno spazio per visualizzare il risultato del calcolo-->
+    </div>
+</body>
+</html>
