@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Calcolatrice</h1>
-    <div id="numeri">
+    <div id="schermo">
         <div id="input"></div>
         <div id="risposta"></div>
     </div>
@@ -16,29 +16,29 @@
     <div id="pulsanti">
         <table>
             <tr>
-                <td><button onclick="n()" value="1">7</button></td>
-                <td><button onclick="n()" value="1">8</button></td>
-                <td><button onclick="n()" value="1">9</button></td>
-                <td><button onclick="somma()">+</button></td>
-                <td><button onclick="divisione()">&divide</button></td>
+                <td><button onclick="n(7)" >7</button></td>
+                <td><button onclick="n(8)" >8</button></td>
+                <td><button onclick="n(9)" >9</button></td>
+                <td><button onclick="operazione('somma')">+</button></td>
+                <td><button onclick="operazione('divisione')">&divide</button></td>
             </tr>
             <tr>
-                <td><button onclick="n()">4</button></td>
-                <td><button onclick="n()">5</button></td>
-                <td><button onclick="n()">6</button></td>
-                <td><button onclick="sottrazione()">-</button></td>
-                <td><button onclick="potenza()">^</button></td>
+                <td><button onclick="n(4)">4</button></td>
+                <td><button onclick="n(5)">5</button></td>
+                <td><button onclick="n(6)">6</button></td>
+                <td><button onclick="operazione('sottrazione')">-</button></td>
+                <td><button onclick="operazione('potenza')">^</button></td>
             </tr>
             <tr>
-                <td><button onclick="n()">1</button></td>
-                <td><button onclick="n()">2</button></td>
-                <td><button onclick="n()">3</button></td>
-                <td><button onclick="moltiplicazione()">&times</button></td>
-                <td><button onclick="radice()">&#x221A</button></td>
+                <td><button onclick="n(1)">1</button></td>
+                <td><button onclick="n(2)">2</button></td>
+                <td><button onclick="n(3)">3</button></td>
+                <td><button onclick="operazione('moltiplicazione')">&times</button></td>
+                <td><button onclick="operazione('radice')">&#x221A</button></td>
             </tr>
             <tr>
-                <td><button onclick="n()">0</button></td>
-                <td><button onclick="cancella()">&#x2297</button></td>
+                <td><button onclick="n(0)">0</button></td>
+                <td><button onclick="operazione('cancella')">&#x2297</button></td>
             </tr>
     </table>
         <!--bisogna mettere uno spazio per visualizzare il risultato del calcolo-->
