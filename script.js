@@ -3,6 +3,7 @@ let tipo = true;
 let n1 ="";
 let n2 = "";
 let tot ="";
+let segno=""
 
 function n(numero){
     if (tipo==true){
@@ -18,7 +19,6 @@ function n(numero){
 
 function operazione(input){
     tipo = false;
-    let segno;
     switch(input){
         case 'somma':
             segno='+';
@@ -38,6 +38,27 @@ function operazione(input){
 
     }
     document.getElementById("input").innerHTML= `${n1} ${segno}`;
+}
+
+function uguale(){
+
+    switch(segno){
+        case '+':
+            tot = n1+n2;
+        case 'sottrazione':
+            segno='-';
+            break;
+        case 'moltiplicazione':
+            segno = '&times';
+            break;
+        case 'divisione':
+            segno = '&divide';
+            break;
+        case 'potenza':
+            segno ='^';
+            break;
+    }
+    document.getElementById("risposta").innerText=tot;
 }
 
 /*
