@@ -1,5 +1,5 @@
 let tiponumero = true; //alterna n1 e n2
-let tipocalcolo = true;//sposta il calcolo fatto prima sotto
+let tipocalcolo = true;//riconosce il primo calcolo e successivamente il calcolo precedente
 let n1 ="";
 let n2 = "";
 let tot ="";
@@ -24,28 +24,36 @@ function operazione(input){
     tiponumero = false;//segna che ha messo il numero 1
         
         switch(input){
+
             case 'somma':
                 segno1='+';
                 break;
+
             case 'sottrazione':
                 segno1='-';
                 break;
+
             case 'moltiplicazione':
                 segno1 = '&times';
                 break;
+
             case 'divisione':
                 segno1 = '&divide';
                 break;
+
             case 'potenza':
                 segno1 ='^';
                 break;
+
             case 'radice':
                 segno1 ='&#x221A';
                 n2=0;
                 segno2=segno1;// riassegno il segno perche` salta l'assegnazione del secondo numero
                 break;
+
             case 'uguale':
                 segno1="";
+                //controllo se l'uguale puo` essere valido
                 if (n2 === ''){     //3 uguali perche con due riconosce lo 0 come stringa vuota
                     alert("inserire tutti i valori prima di premere l'uguale");
                     document.getElementById("risposta").innerHTML= ``;
@@ -53,16 +61,21 @@ function operazione(input){
                     n1 ="";
                     tiponumero=true;//si puo` reinserire il n1
                     return;
-                }else{
-                    console.log(n1, n2, segno1, tot);
+                }else{//faccio fare un calcolo a parte altrimenti mi darebbe problemi con la continuazione dei conti
+                    document.getElementById("input").innerHTML= `${n1} ${segno2} ${n2}`
+                    n1=uguale(n1, n2, segno2) ;
+                    n2 ="";
+                    document.getElementById("risposta").innerHTML= `${n1}`;
+                    tipocalcolo = false;//dico che il primo calcolo e` gia` stato fatto
+                    console.log(segno2);
+                    return;//esce dalla funzione
                 }
-                break;
         }
     
     if (tipocalcolo){
         document.getElementById("risposta").innerHTML= ` ${n1} ${segno1}`;
     }else {
-        if (segno2=='&#x221A'){//if creato solo per evitare che venga scritto n2
+        if (segno2=='&#x221A'){//if solo per evitare che venga scritto n2 quando metto radice
             n2 = "";
         }
     document.getElementById("input").innerHTML= `${n1} ${segno2} ${n2}`
@@ -74,9 +87,9 @@ function operazione(input){
 }
 
 // funzione che mi restituisce il valore dell'operazione
-function uguale(n1, n2, segno1){
+function uguale(n1, n2, segno){
 
-    switch(segno1){
+    switch(segno){
         case '+':
             tot = n1+n2;
             break;
@@ -87,7 +100,11 @@ function uguale(n1, n2, segno1){
             tot = n1*n2;
             break;
         case '&divide':
+            if (n2==0){
+                document.getElementById("risposta").innerText = "Errore"
+            }else{
             tot = n1/n2;
+            }
             break;
         case '^':
             tot = Math.pow(n1, n2);
@@ -95,9 +112,8 @@ function uguale(n1, n2, segno1){
         case '&#x221A':
             tot = Math.sqrt(n1);
             break;
-        case "":
-            uguale(n1,n2, segno1);
-            return;
+        default:
+            tot =n1;
         }
     return tot;
 }
