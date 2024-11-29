@@ -1,36 +1,53 @@
-*{
-    text-align: center;
-    align-content: center;
+
+body{
+    background-color: #2E2E2E;
 }
 button{
-    width: 96px;
-    height: 50px;
+    margin: 2px;
     border: solid transparent;
     border-radius: 20px;
+    width: 96px;
+    height: 50px;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+button.doppio{
+    width: 192px;
+    background-color: #0ABDE3;
+}
+.schermo{
+    height: 62.5px;
+    margin-right: 30px;
+    text-align: right;
+}
+.operazione{
+    background-color: #FF9500;
+}
+
+.cifra{
+    background-color: #4A4A4A;
 }
 
 #pulsanti{
     text-align: center;
     align-content: center;
 }
+
+
 #schermo{
-    text-align: center;
-    align-content: center;
     margin: 10px;
     width: 500px;
     height: 125px;
     border-radius: 20px;
-    background-color: rgb(165,165,165);
+    background-color:  rgb(0, 0, 0);
+    color: #FFFFFF;
 }
+
 #input{
-    text-align: right;
-    margin-right: 30px;
-    padding-top: 20px;
 }
 
 #risposta{
-    text-align: right;
-    margin-right: 30px;
-    padding-top: 20px;
+    margin-top: 20px;
     font-size: 32px;
 }
