@@ -1,6 +1,8 @@
-
 body{
     background-color: #2E2E2E;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    align-content: center;
+    text-align: center;
 }
 button{
     margin: 2px;
@@ -9,6 +11,7 @@ button{
     width: 96px;
     height: 50px;
     color: #FFFFFF;
+    font-size: 15px;
     font-weight: bold;
 }
 
@@ -17,7 +20,7 @@ button.doppio{
     background-color: #0ABDE3;
 }
 .schermo{
-    height: 62.5px;
+    height: 75px;
     margin-right: 30px;
     text-align: right;
 }
@@ -29,25 +32,29 @@ button.doppio{
     background-color: #4A4A4A;
 }
 
+.main{
+    width: 520px;
+    margin:auto;
+}
+
 #pulsanti{
     text-align: center;
     align-content: center;
 }
 
-
 #schermo{
-    margin: 10px;
-    width: 500px;
-    height: 125px;
+    margin-bottom: 10px;
+    height: 150px;
     border-radius: 20px;
     background-color:  rgb(0, 0, 0);
     color: #FFFFFF;
 }
 
 #input{
+    font-size: 18px;
 }
 
 #risposta{
-    margin-top: 20px;
+    padding-top: 20px;
     font-size: 32px;
 }
