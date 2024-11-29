@@ -9,8 +9,8 @@
 <body>
     <h1>Calcolatrice</h1>
     <div id="schermo">
-        <div id="input"></div>
         <div id="risposta"></div>
+        <div id="input"></div>
     </div>
     <!--SPAZIO PER PER PULSANTI-->
     <div id="pulsanti">
@@ -33,12 +33,13 @@
                 <td><button onclick="n(1)">1</button></td>
                 <td><button onclick="n(2)">2</button></td>
                 <td><button onclick="n(3)">3</button></td>
-                <td><button onclick="operazione('moltiplicazione')">&times</button></td>
+                <td><button onclick="operazione('moltiplicazione')">x</button></td>
                 <td><button onclick="operazione('radice')">&#x221A</button></td>
             </tr>
             <tr>
                 <td><button onclick="n(0)">0</button></td>
-                <td><button onclick="operazione('cancella')">&#x2297</button></td>
+                <td><button onclick="cancella()">&#x2297</button></td>
+                <td><button onclick="uguale()">=</button></td>
             </tr>
     </table>
         <!--bisogna mettere uno spazio per visualizzare il risultato del calcolo-->

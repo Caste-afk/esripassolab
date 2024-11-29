@@ -27,7 +27,7 @@ function operazione(input){
             segno='-';
             break;
         case 'moltiplicazione':
-            segno = '&times';
+            segno = 'x';
             break;
         case 'divisione':
             segno = '&divide';
@@ -35,62 +35,43 @@ function operazione(input){
         case 'potenza':
             segno ='^';
             break;
-
+        case 'radice':
+            segno ='√';
+            break;
     }
     document.getElementById("input").innerHTML= `${n1} ${segno}`;
 }
 
 function uguale(){
+    console.log(n1, n2);
 
     switch(segno){
         case '+':
             tot = n1+n2;
-        case 'sottrazione':
-            segno='-';
             break;
-        case 'moltiplicazione':
-            segno = '&times';
+        case '-':
+            tot = n1-n2;
             break;
-        case 'divisione':
-            segno = '&divide';
+        case 'x':
+            tot = n1*n2;
             break;
-        case 'potenza':
-            segno ='^';
+        case '&divide':
+            tot = n1/n2;
             break;
+        case '^':
+            tot = Math.pow(n1, n2);
+            break;
+        
     }
+
     document.getElementById("risposta").innerText=tot;
+    n1 = tot;
+    n2 = "";
 }
 
-/*
-function somma(){
-    let risposta = n1+n2;
-    document.getElementById("risposta").innerHTML =`${n1} + ${n2} = ${risposta}`;
+function cancella(){
+    n1= n2 = tot = "";
+    tipo = true;
+    document.getElementById("input").innerHTML="";
+    document.getElementById("risposta").innerHTML="";
 }
-
-function sottrazione(){
-    let risposta = n1-n2;
-    document.getElementById("risposta").innerHTML =`${n1} - ${n2} = ${risposta}`;
-}
-
-function moltiplicazione(){
-    let risposta = n1*n2;document.getElementById("risposta").innerHTML =`${n1} &times ${n2} = ${risposta}`;
-}
-
-function divisione(){
-    if(n2 ==0){
-        alert('NON PUOI DIVIDERE PER ZERO')
-    }
-    let risposta = n1/n2;
-    document.getElementById("risposta").innerHTML =document.getElementById("risposta").innerHTML =`${n1} &divide ${n2} = ${risposta}`;;
-}
-
-function potenza(){
-    let risposta = Math.pow(n1, n2)
-    document.getElementById("risposta").innerHTML =document.getElementById("risposta").innerHTML =`${n1} ^ ${n2} = ${risposta}`;;
-}
-
-function radice(){
-    let risposta = Math.sqrt(n1);
-    document.getElementById("risposta").innerHTML =`&#x221A ${risposta}`;
-}
-*/
